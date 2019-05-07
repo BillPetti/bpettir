@@ -10,7 +10,7 @@
 #'
 #' @examples \dontrun{format_tables(mtcars)}
 
-format_tables <- function(df, caption = NA) {
+format_tables_md <- function(df, caption = NA) {
   if (!is.na(caption)) {
     df_table <- df %>%
       knitr::kable(caption = caption) %>%
