@@ -1,0 +1,11 @@
+Package: bpettir
+Type: Package
+Title: Personal R package collecting various helper functions
+Version: 0.1.0
+Authors@R: c(person("Bill", "Petti", email = "billpetti@gmail.com", role = c("aut", "cre")))
+Maintainer: The package maintainer <billpetti@gmail.com>
+Description: Contains various functions used by Bill Petti.
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
