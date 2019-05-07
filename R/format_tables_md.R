@@ -8,7 +8,8 @@
 #' @return A formatted data frame to display in a markdown document
 #' @export
 #'
-#' @examples
+#' @examples \dontrun{format_tables(mtcars)}
+
 format_tables <- function(df, caption = NA) {
   if (!is.na(caption)) {
     df_table <- df %>%
