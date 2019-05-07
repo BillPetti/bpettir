@@ -65,20 +65,3 @@ max_ecdf <- function(df, group_var, feature_var) {
 
   comb_ecdf
 }
-
-
-
-
-# example to run using the iris data set
-
-iris_2 <- iris %>%
-  mutate(Species = ifelse(Species == "setosa", 1, 0))
-
-max_ecdf(iris_2,
-         group_var = Species,
-         feature_var = Sepal.Width)
-
-max_ecdf_dist(iris_2,
-              group_var = Species,
-              feature_var = Sepal.Width,
-              feature_string = "Sepal.Width")
