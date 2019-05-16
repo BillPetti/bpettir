@@ -9,6 +9,7 @@
 #' @importFrom tidyr gather
 #' @importFrom purrr map map_df
 #' @importFrom tibble rownames_to_column
+#' @importFrom h2o h2o.getModel h2o.saveModel
 #' @return
 #' @export
 #'
@@ -21,11 +22,11 @@ save_h2o_models_metrics <- function(leaderboard,
   loop_save_models <- function(model_from_leaderboard,
                                path_slug) {
 
-    model <- h2o.getModel(model_from_leaderboard)
+    model <- h2o::h2o.getModel(model_from_leaderboard)
 
-    h2o.saveModel(object = model,
-                  force=TRUE,
-                  path = path_slug)
+    h2o::h2o.saveModel(object = model,
+                       force=TRUE,
+                       path = path_slug)
   }
 
   leaderboard$model_id %>%
@@ -37,7 +38,7 @@ save_h2o_models_metrics <- function(leaderboard,
 
   performance_data <- function(model_from_leaderboard) {
 
-    model <- h2o.getModel(model_from_leaderboard)
+    model <- h2o::h2o.getModel(model_from_leaderboard)
 
     var_import <- model@model$variable_importances %>%
       as.data.frame() %>%
