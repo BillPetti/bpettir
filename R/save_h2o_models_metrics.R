@@ -72,5 +72,7 @@ save_h2o_models_metrics <- function(leaderboard,
     purrr::map(~performance_data(model_from_leaderboard = .)) %>%
     setNames(nm = names_to_pull)
 
+  saveRDS(payload, file = paste0("h2o_model_metrics_", Sys.Date(), ".rds"))
+
   payload
 }
