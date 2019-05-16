@@ -46,7 +46,7 @@ save_h2o_models_metrics <- function(leaderboard,
       dplyr::select(model_id, everything())
 
     confusion_marix <- model@model$cross_validation_metrics@metrics$cm$table %>%
-      dplyr::rownames_to_column
+      tibble::rownames_to_column
 
     performance <- model@model$cross_validation_metrics@metrics$thresholds_and_metric_scores %>%
       dplyr::filter(between(threshold, .5, .509)) %>%
