@@ -16,8 +16,8 @@
 #' @examples \dontrun{save_h2o_models_metrics(leaderbard_a, max_top_models = 5, path_slug = getwd())}
 
 save_h2o_models_metrics <- function(leaderboard,
-                            max_top_models = NA,
-                            path_slug) {
+                                    max_top_models = NA,
+                                    path_slug) {
 
   loop_save_models <- function(model_from_leaderboard,
                                path_slug) {
@@ -46,12 +46,12 @@ save_h2o_models_metrics <- function(leaderboard,
       dplyr::select(model_id, everything())
 
     confusion_marix <- model@model$cross_validation_metrics@metrics$cm$table %>%
-      tibble::rownames_to_column
+      tibble::rownames_to_column()
 
     performance <- model@model$cross_validation_metrics@metrics$thresholds_and_metric_scores %>%
       dplyr::filter(between(threshold, .5, .509)) %>%
       dplyr::filter(threshold == min(threshold)) %>%
-      tidry::gather(key = metric, value = value) %>%
+      tidyr::gather(key = metric, value = value) %>%
       dplyr::mutate(model_id = model@model_id) %>%
       dplyr::select(model_id, everything())
 
