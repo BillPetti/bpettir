@@ -8,7 +8,7 @@
 #' @examples variable_list(mtcars)
 
 variable_list <- function(x) {
-  ddata <- x[1:5, ]
+  data <- x[1:5, ]
   data <- t(data)
   vars <- row.names(data)
   num <- 1:length(vars)
