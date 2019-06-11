@@ -21,7 +21,6 @@ variable_list <- function(x) {
   class <- sapply(x, class)
   data$class <- class
   data <- data[, c(2, 1, 8, 3:7)]
-  return(data)
 
   return(data)
 }
