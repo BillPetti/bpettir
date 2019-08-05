@@ -15,13 +15,13 @@ format_tables_md <- function(df, caption = NA) {
     df_table <- df %>%
       knitr::kable(caption = caption) %>%
       kableExtra::kable_styling(position = "c",
-                    bootstrap_options = "striped",
+                    bootstrap_options = c("striped","hover", "condensed"),
                     full_width = FALSE)
   } else {
     df_table <- df %>%
       knitr::  kable() %>%
       kableExtra::kable_styling(position = "c",
-                    bootstrap_options = "striped",
+                    bootstrap_options = c("striped","hover", "condensed"),
                     full_width = FALSE)
   }
 
