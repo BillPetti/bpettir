@@ -15,6 +15,8 @@
 #' @param from_host from_email_address host
 #' @param port Port to send the outgoing message through
 #'
+#' @import emayili
+#' @importFrom magrittr "%>%"
 #' @return Sends an email with content based on the arguments provided
 #' @export
 #'
