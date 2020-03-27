@@ -25,7 +25,7 @@
 send_email <- function(to_email_address,
                        cc_email_address = NULL,
                        bcc_email_address = NULL,
-                       from_email_address,
+                       from_email_address = NULL,
                        from_email_password,
                        from_email_username = NULL,
                        attachment_path = NULL,
@@ -34,6 +34,12 @@ send_email <- function(to_email_address,
                        email_body_type = "plain",
                        from_host = "smtp.gmail.com",
                        port = 465) {
+
+  if(is.null(from_email_address)) {
+
+    from_email_address <- to_email_address
+
+  }
 
   if(email_body_type == "html") {
 
