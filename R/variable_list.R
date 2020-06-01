@@ -1,6 +1,6 @@
 #' Variable List
 #'
-#' @param x A data frame
+#' @param df A data frame
 #'
 #' @return Gives variable number, name, first observation, and the variable's class and returns a dataframe
 #' @importFrom tibble tibble rownames_to_column
@@ -10,7 +10,7 @@
 #'
 #' @examples variable_list(mtcars)
 
-variable_list <- function(x) {
+variable_list <- function(df) {
   data <- df[1:5, ]
   data <- t(data)
   vars <- row.names(data)
@@ -57,6 +57,8 @@ variable_list <- function(x) {
 
     }
 
+    message('Mapping unique values...')
+    
     mapped_uniques <- purrr::map_df(.x = vars_to_display_u_values,
                              ~uniques(df, .x))
 
