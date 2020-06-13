@@ -4,12 +4,20 @@
 \alias{send_email}
 \title{Send email from within R}
 \usage{
-send_email(to_email_address, cc_email_address = NULL,
-  bcc_email_address = NULL, from_email_address = NULL,
-  from_email_password, from_email_username = NULL,
-  attachment_path = NULL, email_subject = "", email_body = "",
-  email_body_type = "plain", from_host = "smtp.gmail.com",
-  port = 465)
+send_email(
+  to_email_address,
+  cc_email_address = NULL,
+  bcc_email_address = NULL,
+  from_email_address = NULL,
+  from_email_password,
+  from_email_username = NULL,
+  attachment_path = NULL,
+  email_subject = "",
+  email_body = "",
+  email_body_type = "plain",
+  from_host = "smtp.gmail.com",
+  port = 465
+)
 }
 \arguments{
 \item{to_email_address}{A recipient email address.}

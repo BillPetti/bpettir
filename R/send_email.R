@@ -47,7 +47,7 @@ send_email <- function(to_email_address,
       emayili::from(from_email_address) %>%
       emayili::to(to_email_address) %>%
       emayili::subject(email_subject) %>%
-      emayili::body(email_body, "html")
+      emayili::html(email_body)
 
   } else {
 
@@ -55,7 +55,7 @@ send_email <- function(to_email_address,
       emayili::from(from_email_address) %>%
       emayili::to(to_email_address) %>%
       emayili::subject(email_subject) %>%
-      emayili::body(email_body, "plain")
+      emayili::text(email_body)
   }
 
   if(!is.null(cc_email_address)) {
@@ -79,7 +79,7 @@ send_email <- function(to_email_address,
   if(is.null(from_email_username)) {
 
     from_email_username <- from_email_address
-    }
+  }
 
   smtp <- emayili::server(host = from_host,
                           port = port,
