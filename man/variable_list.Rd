@@ -4,10 +4,10 @@
 \alias{variable_list}
 \title{Variable List}
 \usage{
-variable_list(x)
+variable_list(df)
 }
 \arguments{
-\item{x}{A data frame}
+\item{df}{A data frame}
 }
 \value{
 Gives variable number, name, first observation, and the variable's class and returns a dataframe
