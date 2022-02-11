@@ -16,5 +16,5 @@ Gives variable number, name, first observation, and the variable's class and ret
 Variable List
 }
 \examples{
-variable_list(mtcars)
+\dontrun{variable_list(mtcars)}
 }

@@ -8,7 +8,7 @@
 #' @importFrom purrr map_df
 #' @export
 #'
-#' @examples variable_list(mtcars)
+#' @examples \dontrun{variable_list(mtcars)}
 
 variable_list <- function(df) {
   data <- df[1:5, ]
@@ -58,7 +58,7 @@ variable_list <- function(df) {
     }
 
     message('Mapping unique values...')
-    
+
     mapped_uniques <- purrr::map_df(.x = vars_to_display_u_values,
                              ~uniques(df, .x))
 

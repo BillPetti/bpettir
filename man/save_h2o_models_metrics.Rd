@@ -14,6 +14,9 @@ saves all}
 
 \item{path_slug}{A path where you want the models to be saved}
 }
+\value{
+
+}
 \description{
 Save models and various performance metrics from h2o autoML run
 }
